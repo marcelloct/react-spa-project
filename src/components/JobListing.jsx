@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const JobListing = ({ job }) => {
   // [name of the state, name of the function thta we call to change that state]
@@ -39,12 +40,12 @@ const JobListing = ({ job }) => {
             {/* react icons built in component */}
             {job.location}
           </div>
-          <a
-            href={`/job/${job.id}`}
+          <Link
+            to={`/job/${job.id}`}
             className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
