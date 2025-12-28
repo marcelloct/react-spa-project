@@ -10,9 +10,8 @@ const JobListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome
-        ? "http://localhost:3000/jobs?_limit=3"
-        : "http://localhost:3000/jobs";
+      // /api are proxy created in vite.config for deployment
+      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
       try {
         // Need to run 'npm run server' in another terminal side by side with vite
         const res = await fetch(apiUrl);
